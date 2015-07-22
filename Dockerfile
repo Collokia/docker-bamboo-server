@@ -11,7 +11,7 @@ RUN mkdir -p /tmp/build /bamboo/installed "$BAMBOO_HOME" \
     && wget https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-${BAMBOO_VERSION}.tar.gz -O /tmp/build/bamboo.tgz && tar -xzf /tmp/build/bamboo.tgz -C /bamboo/installed \
     && ln -s /bamboo/installed/atlassian-bamboo-${BAMBOO_VERSION} /bamboo/current \
     && wget http://dl.bintray.com/jfrog/jfrog-jars/org/jfrog/bamboo/bamboo-artifactory-plugin/${ARTIFACTORY_PLUGIN_VERSION}/bamboo-artifactory-plugin-${ARTIFACTORY_PLUGIN_VERSION}.jar -O /bamboo/current/atlassian-bamboo/WEB-INF/lib/bamboo-artifactory-plugin-${ARTIFACTORY_PLUGIN_VERSION}.jar \
-    && apt-get clean -y 
+    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR  /bamboo/current
